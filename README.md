@@ -1,11 +1,11 @@
 1)
-./node/client
+/client
 npm i
 npm start
 h -> o (fast open browser)
 
 2)
-./node/server
+/server
 npm i
 npm start
 

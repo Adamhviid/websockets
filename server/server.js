@@ -14,14 +14,12 @@ const clients = {};
 
 ws.on('connection', function (connection) {
   const userId = uuidv4();
-  clients[userId] = connection;
   console.log(`${userId} connected. Total clients: ${Object.keys(clients).length}`);
 
   connection.on('message', (message) => {
     const data = JSON.parse(message);
     ws.clients.forEach((client) => {
       client.send(`[${data.time}] ${data.username}: ${data.message}`);
-
     })
   });
 });
