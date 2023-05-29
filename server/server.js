@@ -14,6 +14,7 @@ const clients = {};
 
 ws.on('connection', function (connection) {
   const userId = uuidv4();
+  clients[userId] = connection;
   console.log(`${userId} connected. Total clients: ${Object.keys(clients).length}`);
 
   connection.on('message', (message) => {
