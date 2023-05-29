@@ -23,7 +23,7 @@ function App() {
   const handleClickSendMessage = () => {
     sendMessage(
       JSON.stringify({
-        time: new Date().toLocaleString().slice(),
+        time: new Date().toLocaleString().slice(12, 20),
         username: username,
         message: message,
       })
